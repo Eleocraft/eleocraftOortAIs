@@ -2,7 +2,7 @@ use oort_api::prelude::*;
 use oort_api::prelude::maths_rs::num::Base;
 
 
-// Frigate
+// Cruiser
 use crate::navigation;
 use crate::settings;
 use crate::ballistics;
@@ -36,7 +36,7 @@ impl Cruiser {
                 radar::track(contact.position, contact.velocity);
 
                 // -- targeting mode --
-                self.frigate_targeting(contact.position, contact.velocity);
+                self.cruiser_targeting(contact.position, contact.velocity);
             } else {
                 // -- activate scanning mode --
                 radar::reset(&mut self.scans_to_do);
@@ -55,7 +55,7 @@ impl Cruiser {
             deactivate_ability(Ability::Boost);
         }
     }
-    fn frigate_targeting(&mut self, target: Vec2, target_velocity: Vec2) {
+    fn cruiser_targeting(&mut self, target: Vec2, target_velocity: Vec2) {
         let target_acceleration = self.get_target_acceleration(target_velocity);
 
         // calculate angular speed of the target relative to the ship

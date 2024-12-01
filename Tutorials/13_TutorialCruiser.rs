@@ -190,7 +190,6 @@ impl Ship {
         turn(((turning_angle * turning_angle * TURNING_SPEED_MULT).abs() + target_angular_speed.abs()) * turning_angle.signum());
 
         // -- gun logic --
-
         fire(1);
         fire(2);
         fire(3);

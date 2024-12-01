@@ -29,7 +29,7 @@ impl Fighter {
             best_target : f64::MAX
         };
         radar::reset(&mut f.scans_to_do);
-        return f;
+        f
     }
 
     pub fn tick(&mut self) {
@@ -94,7 +94,7 @@ impl Fighter {
         accelerate(acceleration);
 
         // -- turning and aiming --
-        let lead_position = ballistics::lead_from_me(target, target_velocity, target_acceleration, settings::BULLET_SPEED);
+        let lead_position = ballistics::lead_from_self(target, target_velocity, target_acceleration, settings::BULLET_SPEED);
         
         let turning_angle = angle_diff(heading(), (lead_position - position()).angle());
         

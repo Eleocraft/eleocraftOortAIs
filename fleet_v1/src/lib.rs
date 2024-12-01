@@ -3,6 +3,7 @@ pub mod ship;
 pub mod fighter;
 pub mod frigate;
 pub mod missile;
+pub mod cruiser;
 
 pub mod navigation;
 pub mod ballistics;

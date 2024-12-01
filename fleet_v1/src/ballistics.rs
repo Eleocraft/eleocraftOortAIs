@@ -21,6 +21,6 @@ pub fn lead(target: Vec2, target_velocity : Vec2, target_acceleration: Vec2, bul
     return target_projected - self_projected_relative;
 }
 
-pub fn lead_from_me(target: Vec2, target_velocity : Vec2, target_acceleration: Vec2, bullet_speed: f64) -> Vec2 {
+pub fn lead_from_self(target: Vec2, target_velocity : Vec2, target_acceleration: Vec2, bullet_speed: f64) -> Vec2 {
     return lead(target, target_velocity, target_acceleration, bullet_speed, position());
 }

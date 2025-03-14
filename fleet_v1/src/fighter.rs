@@ -94,7 +94,7 @@ impl Fighter {
         accelerate(acceleration);
 
         // -- turning and aiming --
-        let lead_position = ballistics::lead_from_self(target, target_velocity, target_acceleration, settings::BULLET_SPEED);
+        let lead_position = ballistics::lead_from_self(target, target_velocity, target_acceleration, settings::BULLET_SPEED, settings::ENEMY_SIZE);
         
         let turning_angle = angle_diff(heading(), (lead_position - position()).angle());
         

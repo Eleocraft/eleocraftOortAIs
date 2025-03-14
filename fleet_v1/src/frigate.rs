@@ -69,13 +69,13 @@ impl Frigate {
         accelerate(acceleration);
 
         // -- turning and aiming --
-        let lead_position = ballistics::lead_from_self(target, target_velocity, target_acceleration, settings::RAILGUN_BULLET_SPEED);
+        let lead_position = ballistics::lead_from_self(target, target_velocity, target_acceleration, settings::RAILGUN_BULLET_SPEED, settings::ENEMY_SIZE);
 
         let right_turret_position = vec2(0.0, TURRET_OFFSET).rotate(heading()) + position();
         let left_turret_position = vec2(0.0, -TURRET_OFFSET).rotate(heading()) + position();
         
-        let right_turret_lead_position = ballistics::lead(target, target_velocity, target_acceleration, settings::BULLET_SPEED, right_turret_position);
-        let left_turret_lead_position = ballistics::lead(target, target_velocity, target_acceleration, settings::BULLET_SPEED, left_turret_position);
+        let right_turret_lead_position = ballistics::lead(target, target_velocity, target_acceleration, settings::BULLET_SPEED, settings::ENEMY_SIZE, right_turret_position);
+        let left_turret_lead_position = ballistics::lead(target, target_velocity, target_acceleration, settings::BULLET_SPEED, settings::ENEMY_SIZE, left_turret_position);
 
         let turning_angle = angle_diff(heading(), (lead_position - position()).angle());
 

@@ -9,7 +9,7 @@ pub const MISSILE_FIRE_ANGLE: f64 = PI * 0.25;
 pub const BULLET_SPEED: f64 = 1000.0; // m/s
 pub const CRUISER_BULLET_SPEED: f64 = 2000.0; // m/s
 pub const RAILGUN_BULLET_SPEED: f64 = 4000.0; // m/s
-pub const PASSES: i32 = 8;
+pub const PREDICTION_ACCURACY_FACTOR: f64 = 0.1;
 
 // Dogfight movement stuff
 pub const MAX_FORWARD_DIST: f64 = 5000.0;

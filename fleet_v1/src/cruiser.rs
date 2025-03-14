@@ -67,7 +67,7 @@ impl Cruiser {
         accelerate(acceleration);
 
         // -- turning and aiming --
-        let turret_lead_position = ballistics::lead_from_self(target, target_velocity, target_acceleration, settings::RAILGUN_BULLET_SPEED);
+        let turret_lead_position = ballistics::lead_from_self(target, target_velocity, target_acceleration, settings::RAILGUN_BULLET_SPEED, settings::ENEMY_SIZE);
 
         let turning_angle = angle_diff(heading(), (turret_lead_position - position()).angle());
 
